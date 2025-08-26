@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/index.css" />
+    <meta charset="utf-8" />
+    <title>Directory Explorer</title>
+</head>
+<body>
+    <div class="container" style="padding-top:2%">
+
+        <!-- Header, create folder, upload file controls -->
+        <div class="row valign-wrapper">
+            <div class="col s12">
+                <h3>Directory Explorer</h3>
+            </div>
+        </div>
+
+        <!-- Search bar -->
+        <div class="row">
+            <div class="col s5">
+                <input placeholder="Search" id="txtQuery" type="text" class="validate">
+            </div>
+            <div class="col s1"></div>
+            <div class="col s3">
+                <button class="btn waves-effect waves-light" id="btnSearch" type="submit" name="action" onclick="">
+                    Search
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+            <div class="col s2">
+                <a class="waves-effect waves-light btn modal-trigger create-folder-trigger" href="#createFolder" data-parentfoldername="origin">Create Folder</a>
+            </div>
+            <div class="col s1">
+                <a class="waves-effect waves-light btn modal-trigger" href="#upload">Upload</a>
+            </div>
+        </div>
+
+        <!-- Origin Path -->
+        <div class="row">
+            <div class="col s8">
+                <input placeholder="Origin Path" id="txtOriginPath" type="text" class="validate">
+            </div>
+            <div class="col s2">
+                <button class="btn waves-effect waves-light" id="btnSetOrigin">Set Origin</button>
+            </div>
+            <div class="col s2">
+                <button class="btn waves-effect waves-light" id="btnResetToOrigin">Back To Origin</button>
+            </div>
+        </div>
+
+        <!-- Breadcrumbs -->
+        <div class="row">
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div class="col s12" id="itemCount">
+
+            </div>
+        </div>
+
+        <!-- Datagrid -->
+        <div class="row">
+            <table id="tblDataTable" class="responsive-table highlight">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Path</th>
+                        <th>Size</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Copy File/Folder Modal -->
+    <div id="copy" class="modal">
+        <div class="modal-content">
+            <h4>Copy</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Save & Close</a>
+        </div>
+    </div>
+
+    <!-- Create Folder Modal -->
+    <div id="createFolder" class="modal">
+        <div class="modal-content">
+            <h4>Create Folder</h4>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="folder_name" type="text" class="validate">
+                    <label for="folder_name">Folder Name</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat confirm-folder-create">Save & Close</a>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div id="delete" class="modal">
+        <div class="modal-content">
+            <h4>Delete</h4>
+            <p>Are you sure you want to delete the object?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat confirm-delete">Delete</a>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="upload" class="modal">
+        <div class="modal-content">
+            <h4>Upload File</h4>
+            <form id="uploadForm">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Choose File</span>
+                        <input type="file" id="fileInput" name="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Select a file">
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <input id="uploadPath" type="text" name="path" placeholder="Path (e.g. origin/)" required>
+                    <label for="uploadPath">Destination Path</label>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <button id="uploadSubmit" class="btn">Upload</button>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>

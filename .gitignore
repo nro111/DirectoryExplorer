@@ -1,0 +1,95 @@
+## .NET / C# / Blazor
+
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Ll]ogs/
+out/
+
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ASP.NET / Blazor
+wwwroot/dist/
+wwwroot/node_modules/
+Client/wwwroot/dist/
+Client/wwwroot/node_modules/
+**/wwwroot/**/*.map
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+*.dgspec.json
+*.nuspec
+*.psmdcp
+
+# Rider
+.idea/
+*.sln.iml
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# DotCover
+*.dotCover
+
+# User secrets
+secrets.json
+**/appsettings.Development.json
+**/appsettings.Local.json
+
+# Logs
+*.log
+*.log.*
+
+# Transient files
+*.tmp
+*.bak
+*.swp
+*.orig
+
+# IIS / Kestrel / Web stuff
+*.publishsettings
+*.azurePubxml
+.publish/
+
+# Entity Framework
+Migrations/
+
+# Coverage reports
+coverage/
+coverage.*.json
+lcov.*
+TestResults/
+
+# Other tooling
+.env
+.env.*
+*.tsbuildinfo
+
+# Blazor WASM cache (optional)
+**/wwwroot/_framework/
+**/obj/Release/net*/staticwebassets/
+
+# Node / frontend (if applicable)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
